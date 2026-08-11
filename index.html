@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class="nav_container">
+      <div class="nav_head">
+        Expense Tracker
+      </div>
+      <div class="nav_links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#expenses">Expenses</a></li>
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+      <div class="nav_profile" id="navProfile">
+        <div class="nav_avatar" id="navAvatar">?</div>
+        <span class="nav_greeting" id="navGreeting">Hi, there</span>
+      </div>
+    </div>
+
+    <div class="global_error" id="globalError"></div>
+
+    <section class="hero" id="home">
+      <div class="stars" id="stars"></div>
+      <div class="hero_content">
+        <h1>Expense Tracker</h1>
+        <p>Track Every Rupee. Spend With Confidence.</p>
+        <div class="hero_balance">
+          <span class="hero_balance_label">Current Balance</span>
+          <span class="hero_balance_value" id="heroBalance">₹0</span>
+        </div>
+        <a href="#expenses" class="cta_btn">Go to Expense Tracker →</a>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2 class="section_title">Features</h2>
+      <div class="features_grid">
+        <div class="feature_card">
+          <div class="feature_icon">⚡</div>
+          <h3>Real-Time Tracking</h3>
+          <p>Every expense and income entry updates your dashboard instantly — no refresh needed.</p>
+        </div>
+        <div class="feature_card">
+          <div class="feature_icon">📊</div>
+          <h3>Category Breakdown</h3>
+          <p>See exactly where your money goes, grouped and totaled by category automatically.</p>
+        </div>
+        <div class="feature_card">
+          <div class="feature_icon">💰</div>
+          <h3>Income vs Expense</h3>
+          <p>Log salary and other income alongside spending to see your true net balance.</p>
+        </div>
+        <div class="feature_card">
+          <div class="feature_icon">🗄️</div>
+          <h3>Persistent Storage</h3>
+          <p>Backed by MongoDB — your data is saved permanently, not just in your browser.</p>
+        </div>
+        <div class="feature_card">
+          <div class="feature_icon">🧠</div>
+          <h3>Smart Form Memory</h3>
+          <p>Remembers your last used category and entry type so repeat entries are faster.</p>
+        </div>
+        <div class="feature_card">
+          <div class="feature_icon">🌌</div>
+          <h3>Custom Space Theme</h3>
+          <p>A distinctive dark, glowing interface built entirely with hand-written CSS animations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracker" id="expenses">
+      <div class="tracker_card">
+        <h2>Add Expense</h2>
+        <form id="expenseForm">
+          <select id="type">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <input type="text" id="title" placeholder="Title" required>
+          <input type="number" id="amount" placeholder="Amount" required>
+          <input type="text" id="category" placeholder="Category" required>
+          <button type="submit">Add</button>
+          <p class="form_error" id="formError"></p>
+        </form>
+      </div>
+
+      <div class="tracker_card">
+        <h2>Your Expenses</h2>
+        <div class="date_filter">
+          <input type="date" id="filterFrom">
+          <span class="date_filter_to">to</span>
+          <input type="date" id="filterTo">
+          <button type="button" id="filterBtn">Filter</button>
+          <button type="button" id="filterClearBtn">Clear</button>
+        </div>
+        <ul id="expenseList"></ul>
+      </div>
+    </section>
+
+    <section class="summary" id="reports">
+      <div class="summary_card">
+        <span class="summary_label">Income</span>
+        <span class="summary_value" id="totalIncome">₹0</span>
+      </div>
+      <div class="summary_card">
+        <span class="summary_label">Spent</span>
+        <span class="summary_value" id="totalSpent">₹0</span>
+      </div>
+      <div class="summary_card">
+        <span class="summary_label">Balance</span>
+        <span class="summary_value" id="netBalance">₹0</span>
+      </div>
+      <div class="summary_card">
+        <span class="summary_label">Highest Expense</span>
+        <span class="summary_value" id="highestSpent">—</span>
+      </div>
+
+      <div class="category_breakdown">
+        <h2>By Category</h2>
+        <ul id="categoryList"></ul>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section_title">About This Project</h2>
+      <div class="about_card">
+        <p>
+          Expense Tracker is a full-stack web application built as a college placement portfolio project.
+          It demonstrates a complete CRUD workflow, RESTful API design, and database-backed persistence.
+        </p>
+        <div class="tech_stack">
+          <span class="tech_badge">HTML</span>
+          <span class="tech_badge">CSS</span>
+          <span class="tech_badge">JavaScript</span>
+          <span class="tech_badge">Node.js</span>
+          <span class="tech_badge">Express</span>
+          <span class="tech_badge">MongoDB</span>
+          <span class="tech_badge">Mongoose</span>
+          <span class="tech_badge">JWT</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer_content">
+        <div class="footer_brand">Expense Tracker</div>
+        <p class="footer_tagline">Track Every Rupee. Spend With Confidence.</p>
+        <ul class="footer_links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#expenses">Expenses</a></li>
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <p class="footer_bottom">© 2026 Expense Tracker — Built as a college project.</p>
+      </div>
+    </footer>
+
+    <div class="floating_clock" id="floatingClock">--:--</div>
+    <script src="script.js"></script>
+  </body>
+</html>
