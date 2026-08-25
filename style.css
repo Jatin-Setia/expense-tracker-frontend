@@ -805,6 +805,7 @@ body {
 
 @media (max-width: 768px) {
     .nav_container {
+        position: static;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
