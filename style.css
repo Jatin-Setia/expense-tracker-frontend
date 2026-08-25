@@ -801,3 +801,42 @@ body {
 .expense_details.open {
     display: block;
 }
+
+
+@media (max-width: 768px) {
+    .nav_container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px 24px;
+    }
+
+    .nav_head {
+        font-size: 1.4rem;
+    }
+
+    .nav_links {
+        width: 100%;
+    }
+
+    .nav_links ul {
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .nav_links a {
+        font-size: 0.85rem;
+    }
+
+    .nav_profile {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav_links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
